@@ -2,7 +2,7 @@
 
     <head>
 
-        <title>Intragram</title>
+        <title>Intergram</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="shortcut icon" href="data/favicon.png" />
@@ -113,10 +113,10 @@
                 <div class="acknowledgement">
                     <p>
                         Created and developed by Jeffrey Paletta in March of 2016. 
-                        Built using HTML5 and Floodwatch
+                        Built using HTML5 and FW
                     </p>
                     <p>
-                        Built using HTML5 and Floodwatch</a>. 
+                        Built using HTML5 and FW</a>. 
                     </p>
                     <p>
                     </p>
@@ -129,11 +129,23 @@
                 </div>
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div id="mainWrapper">
             <div id="header">
                 <div class="wrap">
-                    <div class="logo"><img src="img/logo.svg" alt="intragram logo"></div>
-                    <h1>intragram?</h1>
+                    <div class="logo intergram-logo" id="intergram-logo">
+	                    <img src="img/intergram.png" class="logo-checkbox" id="logo-checkbox"></div>
+<!--                     <h1>intergram</h1> -->
                     <div class="nav">
 <!--                         <div class="navButton current">Feed</div> -->
                         <!-- <div class="navButton">Signature</div> -->
@@ -141,30 +153,43 @@
                     </div>
                 </div>
             </div>
-            <div id="filters">
-                <div class="hitbox1">
-                </div>
+<!--             <div id="filters" > -->
+	        <div id="filters" class="hidden-2" style="margin: 1px !important; padding: 1px !important;">
+                <div class="hitbox1" id="ad-counters"></div>
                 <div class="hitbox2"></div>
                 <div class="wrap">
-                    <div id="timeline">
+                    <div id="timeline" id="timeline-filter">
                     </div>
-                    <div class="single"><p>Filters</p></div>
-                    <div class="single"><p>Sources</p></div>
-                    <div class="single"><p>Themes</p></div>
-                    <div class="single"><p>Colors</p></div>
-                    <div class="double">
-                        <div class="row"><p>Time of Day</p></div>
-                        <div class="row"><p>Format</p></div>
+                    <div class="single" id="filters-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Filters</p></div>
+                    <div class="single" id="sources-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Sources</p></div>
+                    <div class="single" id="themes-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Themes</p></div>
+                    <div class="single" id="colors-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Colors</p></div>
+                    <div class="double" id="double-filter">
+                        <div class="row" id="time-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Time of Day</p></div>
+                        <div class="row" id="format-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Format</p></div>
                     </div>
                 </div>
             </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
             <div id="demographics">
                 
             </div>
             <div id="containerWrapper">
                 <div class="hitbox1">
                     <div class="viewControls">
-                        <p>null</p>
+                        <p id="view-label">view</p>
                         <div class="sliderBkg"><div class="slider"></div><img src="img/viewModes.png" alt="view modes"/></div>
                     </div>
                 </div>
@@ -268,15 +293,31 @@
 
             }
         </script>
+       
+        
+        
         <script src="js/d3.min.js"></script>
         <script src="js/three.min.js"></script>
         <script src="js/color-thief.js"></script>
         <script src="js/adWords.js"></script>
         <script src="js/history.js"></script>
+        <script src="js/jquery-1.8.2.min.js"></script>
         <!-- <script src="js/jquery.validate.min.js"></script>
         <script src="js/jquery.serializejson.min.js"></script> -->
         <!-- // <script src="js/p5.js"></script> -->
         <!-- // <script src="js/signature.js"></script> -->
+        
+         <script>
+		        $(".logo-checkbox").click(function() {
+					if ($('div#filters').hasClass("logo-checked")) {
+						$('div#filters').removeClass("logo-checked");
+    				
+    				} else {
+					$('div#filters').addClass("logo-checked");
+    				}
+    
+				});
+	    </script>
 
     </body>
 
