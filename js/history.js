@@ -1,5 +1,4 @@
 
-
 function setVisibility(id, visibility) {
 				document.getElementById(id).style.display = visibility;
 			}
@@ -1228,7 +1227,6 @@ AdImpression.prototype = {
             themes += keywords.keys[this.placement.keywords[i]].name + (i<this.placement.keywords.length-1 ? ', ':'');
         }
 
-// $$$text
         var s = '<p class="adInfo"><span class="date"></span><br/><span class="publisher"></span><br/><span class="format"></span><span class="color"></span><span class="theme"></span><div class="flag"><p>Edit</p></div>';
 
         d3.select('#container div.info').html(s);
@@ -1863,9 +1861,9 @@ FilterManager.prototype = {
             filteredImpressions = this.list[f].filter(filteredImpressions);
             var p = this.list[f].dom.select('p');
             if(p && this.list[f].selectedFilters.length > 0) {
-                p.style('color','#d5d5d5')	// $$$ filter names
+                p.style('color','#5887FD')
             } else if(p){
-                p.style('color','#d5d5d5')		// $$$ filter names
+                p.style('color','#888')
             }
         }
 
@@ -1927,7 +1925,7 @@ SortMode.prototype = {
 
         var _this = this;
         this.ready = true;
-        var modes = ['Recent', 'Placement', 'Uncommon'];
+        var modes = ['Most recent', 'By ad placement', 'Most uncommon'];
 
         if(d3.selectAll('g.sortModes')[0].length == 0){
             this.svg.append('g')
@@ -1943,7 +1941,7 @@ SortMode.prototype = {
             .on('click',function(d){_this.switchMode(this)})
             .on('mouseover',function(d) {
                 d3.select(this).select('rect.bkg')
-                    .attr('fill','rgba(152,218,255,0.9)')
+                    .attr('fill','rgba(88,135,253,0.9)')
             })
             .on('mouseout',function(d,i){
                 var filtering = false
@@ -1953,7 +1951,7 @@ SortMode.prototype = {
                 d3.select(this).select('rect.bkg')
                     .transition()
                     .duration(150)
-                    .attr('fill','rgba(152,218,255,' + (filtering ? 0.3 : 0.0) + ')')
+                    .attr('fill','rgba(88,135,253,' + (filtering ? 0.3 : 0.0) + ')')
             })
             .each(function(d,i){
                 d3.select(this)
@@ -1974,7 +1972,7 @@ SortMode.prototype = {
                     .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#C5C5C5")	// $$$ FILTERS COLOR
+                    .attr("fill", "#DDDDDD")
                     .style('text-anchor', 'start')
                     .style('pointer-events', 'none');
                     
@@ -1983,7 +1981,7 @@ SortMode.prototype = {
             .each(function(){
                 d3.select(d3.select(this).node().children[0])
                     .transition()
-                    .attr('fill','rgba(152,218,255,0.3)');
+                    .attr('fill','rgba(88,135,253,0.3)');
             })
 
         this.svg.selectAll('g.modes')
@@ -2000,12 +1998,12 @@ SortMode.prototype = {
                     if(_this.selectedMode != this){
                         d3.select(this.children[0])
                             .transition()
-                            .attr('fill','rgba(152,218,255,0.3)');
+                            .attr('fill','rgba(88,135,253,0.3)');
                     }
                 } else {
                     d3.select(this.children[0])
                         .transition()
-                        .attr('fill','rgba(152,218,255,0)');
+                        .attr('fill','rgba(88,135,253,0)');
                 }
             })
 
@@ -2101,7 +2099,7 @@ ColorFilter.prototype = {
             .on('click',function(d){_this.addFilter(this)})
             .on('mouseover',function(d) {
                 d3.select(this).select('rect.bkg')
-                    .attr('fill','rgba(152,218,255,0.9)')
+                    .attr('fill','rgba(88,135,253,0.9)')
             })
             .on('mouseout',function(d){
                 var filtering = false
@@ -2114,7 +2112,7 @@ ColorFilter.prototype = {
                 d3.select(this).select('rect.bkg')
                     .transition()
                     .duration(150)
-                    .attr('fill','rgba(152,218,255,' + (filtering ? 0.3 : 0.0) + ')')
+                    .attr('fill','rgba(88,135,253,' + (filtering ? 0.3 : 0.0) + ')')
             })
             .each(function(d,i){
                 d3.select(this)
@@ -2123,7 +2121,7 @@ ColorFilter.prototype = {
                     .attr('y',0)
                     .attr('width',_this.w+_this.margin*2)
                     .attr('height',20)
-                    .attr('fill','rgba(152,218,255,0)')
+                    .attr('fill','rgba(255,255,255,0)')
                     
                 d3.select(this)
                     .append('rect')
@@ -2134,19 +2132,17 @@ ColorFilter.prototype = {
                     .attr('height',12)
                     .attr('fill',function(d){return '#' + d.id})
                     .style('pointer-events', 'none');
-                 
-                 
-                // COLOR numbers    
+                    
                 d3.select(this)
                     .append('text')
                     .attr('x',_this.svg.attr('width')-_this.margin)
                     .attr('y',15)
                     .attr("font-family", "knockout")
                     .attr('letter-spacing', '0.05em')
-                    .attr("font-size", "10px")
+                    .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#98daff") 		// $ COLOR
+                    .attr("fill", "#EEE")
                     .style('text-anchor', 'end')
                     .style('pointer-events', 'none');
 
@@ -2168,11 +2164,11 @@ ColorFilter.prototype = {
             this.selectedFilters.push(t);
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0.3)');
+                .attr('fill','rgba(88,135,253,0.3)');
         } else {
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(88,135,253,0)');
             this.selectedFilters.splice(this.selectedFilters.indexOf(t),1);
         }
 
@@ -2245,7 +2241,7 @@ ColorFilter.prototype = {
 
     clear: function(){
         d3.selectAll('g.color rect.bkg')
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(255,255,255,0)');
         this.selectedFilters = [];
 
         filters.list['colorFilter'].dom.select('p')
@@ -2315,7 +2311,7 @@ PublisherFilter.prototype = {
             .on('click',function(d){_this.addFilter(this)})
             .on('mouseover',function(d) {
                 d3.select(this).select('rect.bkg')
-                    .attr('fill','rgba(152,218,255,0.9)')
+                    .attr('fill','rgba(88,135,253,0.9)')
             })
             .on('mouseout',function(d){
                 var filtering = false
@@ -2328,7 +2324,7 @@ PublisherFilter.prototype = {
                 d3.select(this).select('rect.bkg')
                     .transition()
                     .duration(150)
-                    .attr('fill','rgba(152,218,255,' + (filtering ? 0.3 : 0.0) + ')')
+                    .attr('fill','rgba(88,135,253,' + (filtering ? 0.3 : 0.0) + ')')
             })
             .each(function(d,i){
                 d3.select(this)
@@ -2337,7 +2333,7 @@ PublisherFilter.prototype = {
                     .attr('y',0)
                     .attr('width',_this.w+_this.margin*2)
                     .attr('height',20)
-                    .attr('fill','rgba(152,218,255,0)')
+                    .attr('fill','rgba(255,255,255,0)')
                     
                 d3.select(this)
                     .append('text')
@@ -2353,7 +2349,7 @@ PublisherFilter.prototype = {
                     .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#c5c5c5")	// $$$ SOURCES NAME COLOR
+                    .attr("fill", "#DDDDDD")
                     .style('text-anchor', 'start')
                     .style('pointer-events', 'none');
                     
@@ -2366,7 +2362,7 @@ PublisherFilter.prototype = {
                     .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#C5C5C5")	// $$$	SOURCES COUNTER COLOR
+                    .attr("fill", "#DDDDDD")
                     .style('text-anchor', 'end');
             })
 
@@ -2386,11 +2382,11 @@ PublisherFilter.prototype = {
             this.selectedFilters.push(t);
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0.3)');
+                .attr('fill','rgba(88,135,253,0.3)');
         } else {
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(88,135,253,0)');
             this.selectedFilters.splice(this.selectedFilters.indexOf(t),1);
         }
 
@@ -2450,7 +2446,7 @@ PublisherFilter.prototype = {
 
     clear: function(){
         d3.selectAll('g.publisher rect.bkg')
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(255,255,255,0)');
         this.selectedFilters = [];
 
         filters.list['publisherFilter'].dom.select('p')
@@ -2524,7 +2520,7 @@ KeywordFilter.prototype = {
             .on('click',function(d){_this.addFilter(this)})
             .on('mouseover',function(d) {
                 d3.select(this).select('rect.bkg')
-                    .attr('fill','rgba(152,218,255,0.9)')
+                    .attr('fill','rgba(88,135,253,0.9)')
             })
             .on('mouseout',function(d){
                 var filtering = false
@@ -2537,7 +2533,7 @@ KeywordFilter.prototype = {
                 d3.select(this).select('rect.bkg')
                     .transition()
                     .duration(150)
-                    .attr('fill','rgba(152,218,255,' + (filtering ? 0.3 : 0.0) + ')')
+                    .attr('fill','rgba(88,135,253,' + (filtering ? 0.3 : 0.0) + ')')
             })
             .each(function(d,i){
                 d3.select(this)
@@ -2546,7 +2542,7 @@ KeywordFilter.prototype = {
                     .attr('y',0)
                     .attr('width',_this.w+_this.margin*2)
                     .attr('height',20)
-                    .attr('fill','rgba(152,218,255,0)')
+                    .attr('fill','rgba(255,255,255,0)')
                     
                 d3.select(this)
                     .append('text')
@@ -2559,7 +2555,7 @@ KeywordFilter.prototype = {
                     .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#c5c5c5")		// $$$	UNUSED? COLOR
+                    .attr("fill", "#DDDDDD")
                     .style('text-anchor', 'start')
                     .style('pointer-events', 'none');
                     
@@ -2572,7 +2568,7 @@ KeywordFilter.prototype = {
                     .attr("font-size", "13px")
                     .attr('font-weight','lighter')
                     .attr('letter-spacing','0.1em')
-                    .attr("fill", "#7FFF00")		//	UNUSED? $$$	COLOR
+                    .attr("fill", "#DDDDDD")
                     .style('text-anchor', 'end')
                     .style('pointer-events', 'none');
             })
@@ -2598,11 +2594,11 @@ KeywordFilter.prototype = {
             this.selectedFiltersID.push(d3.select(t).select('text.id').text());
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0.3)');
+                .attr('fill','rgba(88,135,253,0.3)');
         } else {
             d3.select(t.children[0])
                 .transition()
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(88,135,253,0)');
             this.selectedFilters.splice(this.selectedFilters.indexOf(t),1);
             this.selectedFiltersID.splice(this.selectedFilters.indexOf(t),1);
         }
@@ -2738,7 +2734,7 @@ TimeFilter = function(){
                 .text(_this.timeFormat(d))
                 .style('text-anchor', (left ? 'end':'start'))
                 .attr('font-size', '12px')
-                .attr('fill', '#98daff')
+                .attr('fill', 'white')
                 .style('pointer-events','none')
                 .classed('label',true);
         })
@@ -2817,20 +2813,20 @@ TimeFilter.prototype = {
                 .attr('y',0)
                 .attr('width',this.w)
                 .attr('height',this.h)
-                .attr('fill','rgba(152,218,255,0)');
+                .attr('fill','rgba(0,0,0,0)');
 
             timeFilter.append('path')
                 .datum(times)
                 .attr('class', 'sparkline')
                 .attr('d',line)
-                .attr('fill','#152,218,255,');
+                .attr('fill','#4D4D4D');
 
             timeFilter.append('rect')
                 .attr('x',0)
                 .attr('y',Math.round(this.h-1))
                 .attr('width',this.w)
                 .attr('height',1)
-                .attr('fill','##7fff00')
+                .attr('fill','#1F1F1F')
         } else {
             d3.select('g.timeFilter path.sparkline')
                 .datum(times)
@@ -2848,7 +2844,7 @@ TimeFilter.prototype = {
             .attr('y',0)
             .attr('width',0)
             .attr('height',this.h-1)
-            .attr('fill','rgba(152,218,255,0.7)')
+            .attr('fill','rgba(88,135,253,0.7)')
     },
 
     dragSelection: function(e){
@@ -2876,7 +2872,7 @@ TimeFilter.prototype = {
             .attr('y',0)
             .attr('width',20)
             .attr('height',this.h-1)
-            .attr('fill','rgba(152,218,255,0.3)');
+            .attr('fill','rgba(88,135,253,0.3)');
 
         var x = d3.mouse(filter.node())[0];
         if(x-this.selectionOrigin >= 0){
@@ -3002,7 +2998,7 @@ FormatFilter = function(){
                     .attr('y',_this.h/2-h/2)
                     .attr('width',w)
                     .attr('height',h)
-                    .attr('fill', '#98Daff')
+                    .attr('fill', 'white')
                     .style('pointer-events','none')
                     .classed('label',true);
             }
@@ -3095,20 +3091,20 @@ FormatFilter.prototype = {
                 .attr('y',0)
                 .attr('width',this.w)
                 .attr('height',this.h)
-                .attr('fill','rgba(255,255,255,0)');
+                .attr('fill','rgba(0,0,0,0)');
 
             formatFilter.append('path')
                 .datum(formats)
                 .attr('class', 'sparkline')
                 .attr('d',line)
-                .attr('fill','#d5d5d5');
+                .attr('fill','#4D4D4D');
 
             formatFilter.append('rect')
                 .attr('x',0)
                 .attr('y',Math.round(this.h-2))
                 .attr('width',this.w)
                 .attr('height',1)
-                .attr('fill','#d5d5d5')
+                .attr('fill','#1F1F1F')
         } else {
             d3.select('g.formatFilter path.sparkline')
                 .datum(formats)
@@ -3127,7 +3123,7 @@ FormatFilter.prototype = {
             .attr('y',0)
             .attr('width',0)
             .attr('height',this.h-2)
-            .attr('fill','rgba(152,218,255,0.7)')
+            .attr('fill','rgba(88,135,253,0.7)')
     },
 
     dragSelection: function(e){
@@ -3155,7 +3151,7 @@ FormatFilter.prototype = {
             .attr('y',0)
             .attr('width',20)
             .attr('height',this.h-2)
-            .attr('fill','rgba(152,218,255,0.3)');
+            .attr('fill','rgba(88,135,253,0.3)');
 
         var x = d3.mouse(filter.node())[0];
         if(x-this.selectionOrigin >= 0){
@@ -3361,18 +3357,18 @@ Timeline.prototype = {
         var mo = formatCounter(d.getMonth()+1);
         var da = formatCounter(d.getDate());
         var ye = formatCounter(d.getFullYear());
-        d = mo + '.' + da + '.' + ye;
+        d = mo + '/' + da + '/' + ye;
         this.svg
             .append('text')
             .attr('x',20)
             .attr('y',17)
-            .text('' + d)
+            .text('FROM ' + d)
             .attr("font-family", "knockout")
             .attr('letter-spacing', '0.05em')
-            .attr("font-size", "10px")
-            .attr('font-weight','200')
+            .attr("font-size", "11px")
+            .attr('font-weight','lighter')
             .attr('letter-spacing','0.1em')
-            .attr("fill", "#d5d5d5")		// $$$ START DATE COLOR
+            .attr("fill", "#555555")
             .style('text-anchor', 'start')
             .style('pointer-events', 'none');
 
@@ -3380,18 +3376,18 @@ Timeline.prototype = {
         mo = formatCounter(d.getMonth()+1);
         da = formatCounter(d.getDate());
         ye = formatCounter(d.getFullYear());
-        d = mo + '.' + da + '.' + ye;
+        d = mo + '/' + da + '/' + ye;
         this.svg
             .append('text')
             .attr('x',_this.w-18)
             .attr('y',17)
-            .text('' + d)
+            .text('TO ' + d)
             .attr("font-family", "knockout")
             .attr('letter-spacing', '0.05em')
-            .attr("font-size", "10px")
-            .attr('font-weight','200')
+            .attr("font-size", "11px")
+            .attr('font-weight','lighter')
             .attr('letter-spacing','0.1em')
-            .attr("fill", "#d5d5d5")		// $$$  END DATE COLOR
+            .attr("fill", "#555555")
             .style('text-anchor', 'end')
             .style('pointer-events', 'none');
 
@@ -3422,9 +3418,8 @@ Timeline.prototype = {
         this.svg.append('path')
             .datum(values)
             .attr('class', 'sparkline')
-            .attr('id', 'timeline-data')
             .attr('d', line)
-            .attr("fill","#c5c5c5");		// $$$ TIMELINE DATA COLOR
+            .attr("fill","#5D5D5D");
 
     },
 
@@ -3436,7 +3431,7 @@ Timeline.prototype = {
             .attr('height',this.h-1)
             .attr('y',1)
             .attr('x',1)
-            .attr("fill", "rgba(152,218,255,0.5)")	// $$$ 
+            .attr("fill", "rgba(0,0,0,0.5)")
             .attr('width',0)
             .transition()
             .duration(1000)
@@ -3483,7 +3478,7 @@ Timeline.prototype = {
             .attr('y',1)
             .attr('width',0)
             .attr('height',this.h-1)
-            .attr('fill','rgba(152,218,255,0.5)');
+            .attr('fill','rgba(255,255,255,0.5)');
     },
     
     dragSelection:function(e){
@@ -3513,7 +3508,7 @@ Timeline.prototype = {
             .attr('y',1)
             .attr('width',20)
             .attr('height',this.h-1)
-            .attr('fill','rgba(152,218,255,0.3)');
+            .attr('fill','rgba(88,135,253,0.3)');
 
         var x = d3.mouse(filter.node())[0];
         if(x-this.selectionOrigin >= 0){
@@ -3586,10 +3581,9 @@ AdLoader.prototype = {
             .style('top','50px')
             .style('left',(d3.select('#container').node().clientWidth)/2-(w*4)/2)
             .append('p')
-                .text("Loading feed")
+                .text("Loading your feed")
                 .style('width',(w*4)+'px')
                 .style('margin',0)
-                .style('fill', '#c5c5c5')
                 .style('position','absolute')
                 .style('bottom',0)
                 .style('opacity',0)
@@ -3618,20 +3612,17 @@ AdLoader.prototype = {
         svg.append('path')
             .classed('arc',true)
             .attr('d', arcConstructor)
-            .attr('fill','rgba(152,218,255,0.4)')
-            //.attr('fill','rgba(88, 135, 253,0.4)')
+            .attr('fill','rgba(127, 191, 255,0.4)')
 
         svg.append('path')
             .classed('arc',true)
             .attr('d', arcConstructor)
-            .attr('fill','rgba(152,218,255,0.5)')
-            //.attr('fill','rgba(88, 135, 253,0.5)')
+            .attr('fill','rgba(127, 191, 255,0.5)')
 
         svg.append('path')
             .classed('arc',true)
             .attr('d', arcConstructor2)
-            .attr('fill','rgba(152,218,255,0.25)')
-            //.attr('fill','rgba(88, 135, 253,0.25)')
+            .attr('fill','rgba(127, 191, 255,0.25)')
             .attr('transform', 'translate('+w/2+','+w/2+')')
 
         var animateArcs = function(){
@@ -3769,7 +3760,7 @@ TimelineTicks.prototype = {
                     .attr("font-family", "knockout")
                     .attr('letter-spacing', '0.05em')
                     .attr("font-size", "11px")
-                    .attr("fill", "#d5d5d5")	// $$$ COLOR
+                    .attr("fill", "#888")
                     .style('text-anchor', 'start');
             })
             .transition()
@@ -3808,7 +3799,7 @@ AdCounters.prototype = {
     constructor: AdCounters,
 
     init: function(){
-        d3.select('div.counters').html('<p class="counter collected" id="ad-number">0</p><p class="label" id="ad-label">total</p><p class="counter loaded" id="ad-number">0</p><p class="label" id="ad-label">loaded</p><p class="counter filteredCounter">0</p><p class="label filteredCounter">filtered</p>')
+        d3.select('div.counters').html('<p class="counter collected">0</p><p class="label">ads collected</p><p class="counter loaded">0</p><p class="label">loaded</p><p class="counter filteredCounter">0</p><p class="label filteredCounter">filtered</p>')
         d3.selectAll('div.counters p.filteredCounter')
             .style('opacity',0);
     },
@@ -3951,7 +3942,7 @@ function updateStatus(){
     }
 
     d3.select('#statusBar div.done')
-            .style('background-color','rgba(152,218,255,0)')
+            .style('background-color','rgba(88,135,253,0)')
 }
 
 
@@ -4018,14 +4009,14 @@ TagManager.prototype = {
 
         for(var i = level+2; i<=this.container.node().children.length; i++){
             d3.select('#tagging div.horizontalPan div.level:nth-child('+ (i) +')').selectAll('div.tag')
-                .style('background-color','rgba(152,218,255,0)')
+                .style('background-color','rgba(88,135,253,0)')
             d3.select('#tagging div.horizontalPan div.level:nth-child('+ (i) +')').remove();
         }
 
         for(var i = level+1; i<=this.container.node().children.length; i++){
             d3.select('#tagging div.horizontalPan div.level:nth-child('+ (i) +')').selectAll('div.tag')
                 .filter(function(){return this != source.node();})
-                .style('background-color','rgba(152,218,255,0)')
+                .style('background-color','rgba(88,135,253,0)')
         }
 
         if(this.container.node().children.length <= level+1){
@@ -4068,7 +4059,7 @@ TagManager.prototype = {
             d3.selectAll('#tagging div.horizontalPan div.level').selectAll('div.tag')
                 .filter(function(d,i){return d.name == _this.path[_this.path.length-1]})
                 .transition()
-                .style('background-color','rgba(152,218,255,0)')
+                .style('background-color','rgba(88,135,253,0)')
             _this.path.pop();
         }
         if(_this.path.length == 0) {
@@ -4099,7 +4090,7 @@ TagManager.prototype = {
             .style('max-width','50px');
 
         d3.select('#statusBar div.done')
-            .style('background-color','rgba(152,218,255,0.3)')
+            .style('background-color','rgba(88,135,253,0.3)')
     },
 
     sortTags: function(tags){
@@ -4195,7 +4186,7 @@ TagManager.prototype = {
 
     onMouseOver: function(source){
         source
-            .style('background-color','rgba(152,218,255,0.9)')
+            .style('background-color','rgba(88,135,253,0.9)')
             .style('opacity',1)
 
         if(source.datum().name == this.path[this.path.length-1]) this.updateStatus();
@@ -4207,7 +4198,7 @@ TagManager.prototype = {
         source
             .transition()
             .duration(150)
-            .style('background-color','rgba(152,218,255,' + (this.path[level] == source.datum().name ? 0.3 : 0.0) + ')')
+            .style('background-color','rgba(88,135,253,' + (this.path[level] == source.datum().name ? 0.3 : 0.0) + ')')
         updateStatus();
     }
 
@@ -4376,9 +4367,6 @@ DropdownMenu.prototype = {
 function setVisibility(id, visibility) {
 				document.getElementById(id).style.display = visibility;
 			}
-			
-			
-			
 
 
 
