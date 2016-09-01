@@ -1,0 +1,28 @@
+{
+   "background": {
+      "scripts": [ "js/jquery-1.8.2.min.js", "js/indexeddb.shim.js", "js/color-thief.js", "js/core-min.js", "js/md5-min.js", "js/badWebsites.js", "js/loadActions.js", "js/common.js", "js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "logo19.png",
+         "38": "logo38.png"
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "css/floodwatch.css" ],
+      "js": [ "js/jquery-1.8.2.min.js", "js/jquery.easing.1.2.js", "js/common.js", "js/floodwatch.js", "js/core-min.js", "js/md5-min.js", "js/adBlockPluslist.js", "js/adBlockPlusTopLevelList.js", "js/adBlockBlacklist.js", "js/adBlockSureThing.js", "js/adDomains.js", "js/adSizes.js", "js/adwords.js", "js/jquery.serializejson.min.js", "js/jquery.validate.min.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Intragram beta build 0.4.17. Developed by Jeffrey Paletta.",
+   "icons": {
+      "128": "logo.png",
+      "16": "logo.png",
+      "48": "logo.png"
+   },
+   "manifest_version": 2,
+   "name": "Intragram",
+   "permissions": [ "tabs", "http://*/", "https://*/", "storage", "unlimitedStorage", "notifications", "webRequest", "webRequestBlocking" ],
+   "version": "0.4.17"
+}

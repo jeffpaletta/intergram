@@ -1,0 +1,35 @@
+
+
+<html>
+
+    <head>
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/retrieval.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.serializejson.min.js"></script>
+ 
+        <link rel="stylesheet" type="text/css" href="css/history.css" />
+
+        <title>Floodwatch Password Reset</title>
+
+    </head>
+
+
+    <body>
+        <div id="aboutHeader">
+
+            <h1>floodwatch</h1>
+            <h3>A collective ad monitoring tool for social good</h3>
+            <img src='img/logoSVG.svg' alt="floodwatch logo">
+            
+            <div class="wrap">
+                <p id="options"> To reset your password, please enter the username and email you signed up with. We will email a reset link to your email address.</p>
+                <form id="retrieval" method="post">
+                    <input type="text" name="username" value="username" id="username_l" class="required" title="Please enter your username"><br>
+                    <input type="text" name="email" value="email" class="required" title="Please enter your password"><br>
+                    <input id ="submit" type="submit" value="submit" class="button"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

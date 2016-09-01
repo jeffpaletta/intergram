@@ -1,0 +1,36 @@
+
+
+<html>
+
+    <head>
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.serializejson.min.js"></script>
+        <script src="js/login.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/history.css" />
+
+        <title>Download Data</title>
+
+    </head>
+
+
+    <body>
+        <div id="aboutHeader">
+
+            <h1>Intragram</h1>
+            <h3>A collective ad monitoring tool for social good</h3>
+            <img src='img/logoSVG.svg' alt="floodwatch logo">
+            
+            <div class="wrap">
+                <h3 id ="explain">Data will be emailed to you as a zip file containing two parts - A JSON file that contains all the relevant information as to ad location, time seen, etc, and a folder of the associated images. Please be patient as compiling and downloading this information takes time.</h3>
+                <div id="login_div">
+                <h2>Please confirm your registered email to download data</h2>
+                <form id="download_f" method="post">
+                    <input type="text" name="email" value="Email Address" id="email_f" class="required" title="Please enter your email address">
+                    <input id ="submit" type="submit" value="submit" class="button" title="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

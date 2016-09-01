@@ -1,0 +1,84 @@
+
+
+<html>
+
+    <head>
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/jquery.serializejson.min.js"></script>
+        <script src="js/hide-show.js"></script>
+        
+ 
+        <link rel="stylesheet" type="text/css" href="css/history.css" />
+
+        <title>Intergram</title>
+
+    </head>
+
+
+    <body>
+        <div id="aboutHeader">
+
+<!--             <h1>Intergram</h1> -->
+<!--             <img src='img/intergram.png' alt="floodwatch logo" id="login-logo"> -->
+<!--             <h3>capture and share what's being captured and shared</h3> -->
+            
+            
+            <div class="wrap">
+                <div id="login_div">
+                <h2 id="options"> </h2>
+                <form id="login" method="post">
+                    <input type="text" name="username" value="username" id="username_l" class="required" title="Please enter your username">
+                    <input type="password" value="password" id="password_l" name="password" class="required" title="Please enter your password">
+                    <input id ="submit" type="submit" value="submit" class="button" title="submit">
+                </form>
+                <div id="disclaim">
+                    <div id="showSignup" class="disclaimButton"></div>
+                    <div id="retrieve" class="disclaimButton"> </div>
+                    <div id="delete" class="disclaimButton"> Create new account</div>
+                    <div id="delete" class="disclaimButton"> Delete data cache</div>
+                    <div id="account">
+                        <div class="wrap">
+                            <div id="signupBox">
+                                <div class="wrap">
+                                    <h2></h2>
+                                    <form id="signup" method="post">
+                                        <div class="column">
+                                            <p>Required information:</p>
+                                            <input type="text" name="username" value="Username" id="username" class="required" title="Please select a username"><div class="clear"></div>
+                                            <input type="text" name="email" id="email" value="Email Address" class="required email" title="Please enter your email address"><div class="clear"></div>
+                                            <input type="password" name="password" id="password" value="password" class="required password" title="Please enter a password">
+                                            <div class="password-meter">
+                                                <div class="password-meter-message">
+                                                    &nbsp;
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <input type="checkbox" name="opt_in"><label class="share"></label><br>
+                                        </div>
+                                        <div class="column">
+                                            <p></p>
+                                            <input type="text" name="age" id="age" title="Please enter your age" value="Age"><br>
+                                            <input type="text" name="city" id="city" title="Please enter your city" value="city"><br>
+                                            <label class="gender">I identify my gender as: </label>
+                                            <select name="Gender" title="I identify my gender as: ">
+                                                <option value="NA">----</option>
+                                                <option value="female">Female</option>
+                                                <option value="male">Male</option>
+                                                <option value="trans">Trans*</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <input id ="submit" type="submit" value="submit" class="button"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

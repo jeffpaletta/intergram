@@ -1,0 +1,95 @@
+
+
+<!doctype html>
+
+<html>
+
+    <head>
+
+        <title>FLOODWATCH - Your Advertising History</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="data/favicon.png" />
+        
+        <link rel="stylesheet" type="text/css" href="css/tagging.css" />
+        <link rel="stylesheet" type="text/css" href="css/history.css" />
+
+        <style>
+
+        #filters{
+        	height:100px;
+        }
+
+        #header div.wrap div.nav{
+            width:33%;
+        } 
+
+        #header div.wrap div.navButton{
+            width:33%;
+        }
+
+        #header div.wrap h1{
+            width:59%;
+        }
+
+        #filters div.wrap{
+	        width:75%;
+	        padding-left: 2.5%;
+	        padding-right: 2.5%;
+	        height:100%;
+	        background-color: #252525;
+	        margin:auto;
+	        border-left: 1px solid #141414;
+	        border-right: 1px solid #141414;
+	    }
+
+        #filters div.wrap p.script{
+        	float:none;
+        	width:63%;
+        	color:#eee;
+        	font-size: 15px;
+        	text-align: left;
+        	letter-spacing: 0.3em;
+        	font-family: knockout;
+        	line-height: 1.35em;
+        }
+
+        </style>
+
+    </head>
+
+
+    <body>	
+
+    	<div id="mainWrapper">
+            <div id="header">
+                <div class="wrap">
+                    <div class="logo"><img src="img/logo.svg" alt="floodwatch logo"></div>
+                    <h1>floodwatch</h1>
+                    <div class="nav">
+                        <div class="navButton">History</div>
+                        <div class="navButton current">Signature</div>
+                        <div class="navButton">About</div>
+                    </div>
+                </div>
+            </div>
+            <div id="filters">
+                <div class="hitbox1"></div>
+                <div class="hitbox2"></div>
+                <div class="wrap">
+                    <p class="script">Soon to be released 'Signature' mode allows you to explore which kind of ads you are being served online.</p>
+                    <p class="script">The interface allows you to compare your ad profile with other groups of Floodwatch users.</p>
+                    <p class="script">Overlaying profiles sharing similar information with yours (age, gender, profession...) reveals what makes you unique in advertisers' eyes.</p>
+                </div>
+            </div>
+            <div id="containerWrapper">
+                <div id="p5"></div>
+            </div>
+        </div>
+
+		<script src="js/adWords.js"></script>
+		<script src="js/p5.js"></script>
+		<script src="js/d3.min.js"></script>
+		<script src="js/sketch.js"></script>
+	</body>
+</html>

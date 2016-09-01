@@ -1,0 +1,127 @@
+
+
+<html>
+
+    <head>
+        
+        <title>Intergram</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="data/favicon.png" />
+        
+        <link rel="stylesheet" type="text/css" href="css/disclaimer.css" />
+
+    </head>
+
+
+    <body>
+
+        <div id="header">
+<!--             <img src="img/intergram.png" class="logo-checkbox" id="logo-checkbox"></div> -->
+<!--             <h3>capture and share what's being captured and shared</h3> -->
+<!--             <img src='img/logoSVG.svg' alt="intragram logo"> -->
+        </div>
+
+        <div id="about">
+            <div class="mainWrapper">
+	        </div>
+        </div>
+
+        <div id="signupContainer">
+            <div class="mainWrapper">
+                <h2>Create an profile to save your data</h2>
+                <p class="beware">Locally stored data may be lost if you clear your browser chache</p>
+                <form id="signup">
+                    <div class="row required">
+                    <p>Required information:</p>
+                        <div class="column">
+                            <input type="text" name="username" value="Username" id="username" class="required" title="Please select a username">
+                        </div>
+                        <div class="column">
+                            <input type="text" name="email" id="email" value="Email Address" class="required email" title="Please enter your email address">
+                        </div>
+                        <div class="column">
+                            <input type="password" name="password" id="password" value="password" class="required password" title="Please enter a password">
+                            <div class="password-meter">
+                                <div class="password-meter-message">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row optional">
+                    <p>Demographics?</p>
+                        <div class="column">
+                            <label>Age</label>
+                            <input type="text" name="age" id="age" title="Please enter your age" value=""><br>
+                        </div>
+                        <div class="column">
+                            <label>City</label>
+                            <input type="text" name="city" id="city" title="Please enter your city" value=""><br>
+                        </div>
+                        <div class="column">
+                            <label class="gender">I identify my gender as: </label>
+                            <select name="Gender" title="I identify my gender as: ">
+                                <option value="NA">----</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input id ="submit" type="submit" value="sign up!"/>
+                </form>
+            </div>
+        </div>
+
+        <div id="signupOptions">
+            <div class="mainWrapper">
+                <table id="demographics-table">
+                    <tr>
+
+
+
+
+                        <td style="max-width: 1px !important; margin-left: auto; margin-right: auto">
+                        </td>
+                        <td>
+                            <div class="cta optin">
+                                <p style="font-size: 14px; color: #c5c5c5; margin-top: 20px; font-weight: 200 !important">a profile named "Jeffrey Paletta" already exists. Is that you? </p>
+<!--                                 <p> </p> -->
+<!-- 								<img src="img/profile.png" alt="opt in icon"/> -->
+
+<!--                                 <p class="signupButton"><span id="login_form">Yes</span></p> -->
+                                <p class="signupButton" style="margin-top: 8px; display: inline-block; float: left; max-width: 45%; max-height: 20px; padding-right: 4px;"><span id="login_form"style="font-size: 14px; color: white;">Yes</span></p>
+                                <p class="signupButton" style="margin-top: 8px; display: inline-block; float: right; max-width: 45%; max-height: 24px; padding-left: 4px;"><span id="login_form" style="font-size: 14px; color: white;">No</span></p>
+                            </div>
+                        </td>
+                        <td style="max-width: 1px !important; margin-left: auto; margin-right: auto">
+<!--
+                            <div class="cta optout">
+                                <p>Subscribe to floodwatch in local mode</p>
+                                <p>Keep your data on your computer</p>
+                                <img src="img/optout.svg" alt="opt out icon"/>
+                                <p class="signupButton">Sign up</p>
+                            </div>
+-->
+                        </td>
+                    </tr>
+                    
+
+                </table>
+            </div>
+        </div>
+
+        <div id="data">
+            <div class="mainWrapper">
+            </div>
+        </div>
+
+
+        
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.serializejson.min.js"></script>
+        <script src="js/disclaimer.js"></script>
+    </body>
+</html>

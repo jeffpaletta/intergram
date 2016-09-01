@@ -1,0 +1,324 @@
+<html>
+
+    <head>
+
+        <title>Intergram</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="data/favicon.png" />
+        
+        <link rel="stylesheet" type="text/css" href="css/tagging.css" />
+        <link rel="stylesheet" type="text/css" href="css/history.css" />
+
+    </head>
+
+
+    <body>
+
+        <div id="taggingBody">
+            <div id="taggingWrapper">
+                <div id="imageToTag"><img src=""/></div>
+                <div id="statusBar">
+                    <div class="btn back"><img width="16px" height="16px" src="img/tagging_back.png"/></div>
+                    <div class="status"><p></p></div>
+                    <div class="buttons">
+                        <div class="btn flagButton"><img width="16px" height="16px" src="img/tagging_not.png"/></div>
+                        <div class="btn skip"><img width="16px" height="16px" src="img/tagging_skip.png"/></div>
+                        <div class="btn done"><img width="16px" height="16px" src="img/tagging_done.png"/></div>
+                    </div>
+                </div>
+                <div id="tagging">
+                    <div class="horizontalPan">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about">
+            <div class="wrap">
+                <p class="version">
+                    This is the beta version of a program currently being developed by Jeffrey Paletta at the College for Creative Studies in Detroit, Michigan. It has not been publicly released, so you should not be reading this 						right now...
+                </p>
+                <p class="intro">
+                    Intragram (placeholder name, not necessarily the final ) is currently a Google Chrome browser extension that identifies, classifies, saves, then tracks the advertisement's you see when browsing online. I'll go 						further in depth another time after i finally get some rest.
+                </p>
+
+                <div class="hr"></div>
+
+                <h2>My Data</h2>
+                <div class="donate">
+                    <p>
+                        placeholder
+                    </p>
+                    <p>
+						placeholder                    
+					</p>
+                    <p>
+                        placeholder
+                    </p>
+                    <p>
+                        placeholder
+                    </p>
+                    <p>
+                        placeholder
+                    </p>
+                </div>
+                <div class="record">
+                    <p>
+                        Impressions should look like this: 
+                    </p>
+                    <p class="code"> 
+                        {"id" : 1, timestamp": 2014-05-29 19:12:51, 
+                        "placement_id": "9daac9a292f4f311e416dcf4ad3f3bdfa3979e48ee54e9ad4ff1ed91bb7c4e73",
+                        "user_id": 1}
+                    </p>
+                   <div class="sharingOptions">
+                        <div class="optin"><span></span>Store data remorely</div>
+                        <div class="optout"><span></span>store data locally</div>
+                    </div>
+
+                </div>
+<!-- 
+                <div class="wrap">
+                        <h2>Demographics</h2>
+                        <form id="demographics" method="post">
+                            <p>Please help researchers by donating some demographic information</p>
+                            <label>Age</label>
+                            <input type="text" name="age" value="" id="age" title="Please enter your age"><br>
+                            <label>I identify my gender as: </label>
+                            <select name="Gender" title="I identify my gender as: ">
+                                <option value="NA">Undefined</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="trans">Trans*</option>
+                            </select>
+                            <label>Zipcode</label>
+                            <input type="text" name="zipcode" value="" id="zipcode" title="Please enter your zipcode"><br>
+                            <input id ="submit" type="submit" value="submit" class="button"/>
+                        </form>
+                    </div> -->
+
+                <div class="hr"></div>
+                
+                <h2>I can't see anything</h2>
+                <div class="howdoesitwork">
+                    <p>
+                        Either there is a problem connecting to the host server, orthe server cannot bypass a third part extensions installed on your machine, like adblock or ublock.
+                    </p>
+                </div>
+
+                <div class="hr"></div>
+                
+                <h2>Credit</h2>
+                <div class="acknowledgement">
+                    <p>
+                        Created and developed by Jeffrey Paletta in March of 2016. 
+                        Built using HTML5 and FW
+                    </p>
+                    <p>
+                        Built using HTML5 and FW</a>. 
+                    </p>
+                    <p>
+                    </p>
+                </div>
+                <div class="hr"></div>
+                <h2>Contact</h2>
+                <div class="contact">
+                    Email: jeffpaletta@gmail.com
+                    <a href="http://www.jeff.college">jeff.college</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="mainWrapper">
+            <div id="header">
+                <div class="wrap">
+                    <div class="logo intergram-logo" id="intergram-logo">
+	                    <img src="img/intergram.png" class="logo-checkbox" id="logo-checkbox"></div>
+<!--                     <h1>intergram</h1> -->
+                    <div class="nav">
+<!--                         <div class="navButton current">Feed</div> -->
+                        <!-- <div class="navButton">Signature</div> -->
+<!--                         <div class="navButton">Profile</div> -->
+                    </div>
+                </div>
+            </div>
+<!--             <div id="filters" > -->
+	        <div id="filters" class="hidden-2" style="margin: 1px !important; padding: 1px !important;">
+                <div class="hitbox1" id="ad-counters"></div>
+                <div class="hitbox2"></div>
+                <div class="wrap">
+                    <div id="timeline" id="timeline-filter">
+                    </div>
+                    <div class="single" id="filters-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Filters</p></div>
+                    <div class="single" id="sources-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Sources</p></div>
+                    <div class="single" id="themes-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Themes</p></div>
+                    <div class="single" id="colors-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Colors</p></div>
+                    <div class="double" id="double-filter">
+                        <div class="row" id="time-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Time of Day</p></div>
+                        <div class="row" id="format-filter"><p style="font-size: 9px !important; color: #d5d5d5 !important; font-weight: 200px !important;">Format</p></div>
+                    </div>
+                </div>
+            </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+            <div id="demographics">
+                
+            </div>
+            <div id="containerWrapper">
+                <div class="hitbox1">
+                    <div class="viewControls">
+                        <p id="view-label">view</p>
+                        <div class="sliderBkg"><div class="slider"></div><img src="img/viewModes.png" alt="view modes"/></div>
+                    </div>
+                </div>
+                <div class="hitbox2"></div>
+                <div id="container">
+                    <div id="errorDisplay">
+                        <p>error message</p>
+                        <div class="resume">Resume exploration</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dropdownMenu">
+                <div class="hitbox"></div>
+                <div class="wrap">
+                    <p class="icon">
+                        +
+                    </p>
+                    <p class="cta">
+                        Life is simpler if you just enable data share.
+                    <p>
+                    <div class="form optin">
+                        <p class="description">
+                            The cloud isn't in the sky; it's my computer. You're data will be stored on my computer. Is that fine?
+                        </p>
+                        <div class="sharingOptions">
+                            <div class="optin"><span></span>Store data remotely</div>
+                            <div class="optout"><span></span>Store data locally</div>
+                        </div>
+                    </div>
+                    <form class="form demographics">
+                        <p class="description">
+                            Who even are you?.
+                        </p>
+                        <div class="column">
+                            <input type="text" name="age" id="age" title="Please enter your age" value="Age"><br>
+                            <input type="text" name="city" id="city" title="Please enter your city" value="city"><br>
+                            <label class="gender">I identify my gender as: </label>
+                            <select name="Gender" title="I identify my gender as: ">
+                                <option value="NA">----</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input id ="submit" type="submit" value="submit" class="button"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script id="vertexShader" type="text/x-glsl-vert">
+            varying vec2 vuv;
+            // attribute vec2 acorneruv;
+            // varying vec2 vcorneruv;
+            // attribute vec2 adims;
+            // varying vec2 vdims;
+            attribute vec3 aopos;
+            attribute vec3 atpos;
+            attribute float aofading;
+            attribute float atfading;
+            varying float vfading;
+            uniform float ulerpamount;
+            void main() {
+                vuv = uv;
+                // vcorneruv = acorneruv;
+                // vdims = adims;
+                vec3 aPos = aopos + (atpos - aopos)*ulerpamount;
+                vfading = aofading + (atfading-aofading)*ulerpamount;
+                vec4 mvPosition = modelViewMatrix * vec4(aPos.x,aPos.y,aPos.z,1.0);
+                vec4 p = projectionMatrix * mvPosition;
+                gl_Position = p;
+            }
+        </script>
+        <script id="fragmentShader" type="text/x-glsl-frag">
+            varying vec2 vuv;
+            // varying vec2 vcorneruv;
+            // varying vec2 vdims;
+            uniform sampler2D utexture;
+            varying float vfading;
+
+            float map(float value, float start1, float stop1, float start2, float stop2) {
+                return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+            }
+
+            void main() {
+
+                vec4 diffuse = texture2D(utexture, vuv);
+
+                // vec2 uvfiltered = vec2(0,0);
+                // float globalsize = 4096.0;
+                // float sampling = 256.0;
+                // float offset = (globalsize/sampling)/globalsize;
+                // uvfiltered.x = map(vuv.x,vcorneruv.x,vcorneruv.x+vdims.x,vcorneruv.x+offset,vcorneruv.x+vdims.x-offset);
+                // uvfiltered.y = map(vuv.y,1.0-(vcorneruv.y+vdims.y),vcorneruv.y,(1.0-(vcorneruv.y+vdims.y+offset*5.0)),vcorneruv.y);
+                // vec4 diffuse = texture2D(utexture, uvfiltered);
+                
+                vec4 fading = vec4(0.078,0.078,0.078,1);
+                gl_FragColor = diffuse + (fading - diffuse)*vfading;
+
+            }
+        </script>
+       
+        
+        
+        <script src="js/d3.min.js"></script>
+        <script src="js/three.min.js"></script>
+        <script src="js/color-thief.js"></script>
+        <script src="js/adWords.js"></script>
+        <script src="js/history.js"></script>
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <!-- <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.serializejson.min.js"></script> -->
+        <!-- // <script src="js/p5.js"></script> -->
+        <!-- // <script src="js/signature.js"></script> -->
+        
+         <script>
+		        $(".logo-checkbox").click(function() {
+					if ($('div#filters').hasClass("logo-checked")) {
+						$('div#filters').removeClass("logo-checked");
+    				
+    				} else {
+					$('div#filters').addClass("logo-checked");
+    				}
+    
+				});
+	    </script>
+
+    </body>
+
+</html>
